@@ -3,7 +3,7 @@
 [Live Demo](https://mini-webshop.onrender.com/)
 
 ## Screenshots
-![Mini Webshop](pictures/image1.png)
+![Mini Webshop](pictures/image.png)
 ![Mini Webshop](pictures/image2.png)
 ![Mini Webshop](pictures/image3.png)
 
