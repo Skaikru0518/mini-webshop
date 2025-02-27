@@ -68,7 +68,7 @@ npm install --prefix frontend
 ```
 
 ### **3️⃣ Setup Environment Variables**
-Create a `.env` file in the **backend/** folder and configure your environment variables:
+Create a `.env` file in the **/** folder and configure your environment variables:
 ```sh
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
