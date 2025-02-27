@@ -1,6 +1,11 @@
 # 🛒 Mini Webshop
 
-![Live demo]((https://mini-webshop.onrender.com/)) <!-- Replace with an actual image if available -->
+[Live Demo](https://mini-webshop.onrender.com/)
+
+## Screenshots
+![Mini Webshop](pictures/image1.png)
+![Mini Webshop](pictures/image2.png)
+![Mini Webshop](pictures/image3.png)
 
 ## 📌 About the Project
 Mini Webshop is a **full-stack e-commerce application** built with **React (frontend)** and **Node.js/Express (backend)**. It provides a simple and efficient shopping experience, allowing users to browse products, manage inventory, and place orders.
