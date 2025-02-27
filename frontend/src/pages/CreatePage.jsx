@@ -6,8 +6,10 @@ import {
 	Input,
 	Button,
 } from "@chakra-ui/react";
+import { Toaster, toaster } from "../components/ui/toaster";
 import React, { useState } from "react";
 import { useColorModeValue } from "../components/ui/color-mode";
+import { useProductStore } from "../store/product";
 
 const CreatePage = () => {
 	const [newProduct, setNewProduct] = useState({
@@ -16,9 +18,22 @@ const CreatePage = () => {
 		image: "",
 	});
 
-	function handleAddProduct() {
-		console.log(newProduct);
-	}
+	const { createProduct } = useProductStore();
+
+	const handleAddProduct = async () => {
+		const { success, message } = await createProduct(newProduct);
+
+		toaster.create({
+			title: success ? "Success" : "Error",
+			description: message,
+			status: success ? "success" : "error",
+			duration: 3000,
+			type: success ? "success" : "error",
+		});
+
+		setNewProduct({ name: "", price: "", image: "" });
+	};
+
 	return (
 		<Container maxW={"xl"}>
 			<VStack spaceX={8}>
@@ -27,7 +42,7 @@ const CreatePage = () => {
 				</Heading>
 				<Box
 					w={"full"}
-					bg={useColorModeValue("white", "gray.800")}
+					bg={useColorModeValue("white", "gray.900")}
 					p={6}
 					rounded={"lg"}
 					shadow={"md"}
@@ -58,12 +73,18 @@ const CreatePage = () => {
 							}
 						/>
 
-						<Button colorScheme="blue" onClick={handleAddProduct} w={"full"}>
+						<Button
+							bg={"#91ccf3"}
+							onClick={handleAddProduct}
+							w={"full"}
+							_hover={{ bg: "blue.500" }}
+						>
 							Add product
 						</Button>
 					</VStack>
 				</Box>
 			</VStack>
+			<Toaster></Toaster>
 		</Container>
 	);
 };
